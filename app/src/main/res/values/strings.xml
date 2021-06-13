@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CurrencyApplication</string>
+    <string name="show">Show</string>
+    <string name="crypto_currency">CRYPTOCURRENCY</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".currencyList.view.DemoActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlIconBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/actionBarBackground"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/tvCryptoCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_toStartOf="@id/ivSorting"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:text="@string/crypto_currency"
+            android:textSize="@dimen/fontsize_normal" />
+
+        <TextView
+            android:id="@+id/tvShowAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_toStartOf="@id/ivSorting"
+            android:layout_alignParentEnd="true"
+            android:text="@string/show"
+            android:textSize="@dimen/fontsize_normal" />
+
+        <ImageView
+            android:id="@+id/ivSorting"
+            android:layout_width="@dimen/normal_icon_size"
+            android:layout_height="@dimen/normal_icon_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/layout_margin"
+            android:visibility="gone"
+            android:src="@drawable/sort_down" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlIconBar"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

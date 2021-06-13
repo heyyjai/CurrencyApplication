@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currencyInfo"
+            type="com.example.currencyApplication.currencyList.model.CurrencyInfo" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rootLayout"
+        >
+
+    <RelativeLayout
+        android:id="@+id/rlCurrencyIconLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="@dimen/padding_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/ivIconBg"
+            android:layout_margin="@dimen/padding_normal"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/bg_currency_icon"/>
+
+        <TextView
+            android:id="@+id/tvCurrencyIconHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/ivIconBg"
+            android:layout_alignEnd="@id/ivIconBg"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/fontsize_normal"
+            android:text="C"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvCurrencyName"
+        app:layout_constraintStart_toEndOf="@id/rlCurrencyIconLayout"
+        app:layout_constraintTop_toTopOf="@id/rlCurrencyIconLayout"
+        app:layout_constraintBottom_toBottomOf="@id/rlCurrencyIconLayout"
+        android:text="@{currencyInfo.name}"
+        android:layout_margin="@dimen/layout_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontsize_normal"
+        tools:text="Crypto.com"
+        />
+
+
+    <TextView
+        android:id="@+id/tvSymbolName"
+        app:layout_constraintEnd_toStartOf="@id/ivArrow"
+        app:layout_constraintTop_toTopOf="@id/rlCurrencyIconLayout"
+        app:layout_constraintBottom_toBottomOf="@id/rlCurrencyIconLayout"
+        android:text="@{currencyInfo.symbol}"
+        android:layout_margin="@dimen/padding_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontsize_normal"
+        tools:text="MCO"
+        />
+
+    <ImageView
+        android:id="@+id/ivArrow"
+        app:layout_constraintTop_toTopOf="@id/rlCurrencyIconLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/rlCurrencyIconLayout"
+        android:layout_margin="@dimen/layout_margin"
+        android:layout_width="@dimen/normal_icon_size"
+        android:layout_height="@dimen/normal_icon_size"
+        android:layout_centerVertical="true"
+        android:src="@drawable/right_arrow"
+       />
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/tvCurrencyName"
+        app:layout_constraintStart_toStartOf="@id/tvCurrencyName"
+        app:layout_constraintBottom_toBottomOf="@id/rlCurrencyIconLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/padding_normal"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/divider_grey"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
